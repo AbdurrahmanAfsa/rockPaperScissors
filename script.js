@@ -5,7 +5,6 @@ function computerPlay(){
 }
 
 function roundPlay(playerSelection , computerSelection){
-    console.log(`the player chose: ${playerSelection}`)
     if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock"){
         console.log("You win");
     }else if(playerSelection.toLowerCase() == "paper" && computerSelection == "scissors"){
@@ -23,5 +22,11 @@ function roundPlay(playerSelection , computerSelection){
     }
 }
 
-roundPlay("sciSSors" , computerPlay());
+function game(){
+    for (let i = 1; i <= 5 ; i++){
+        roundPlay("paper" , computerPlay());
+    }
+}
+
+game();
 

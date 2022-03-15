@@ -4,4 +4,24 @@ function computerPlay(){
     return compChoice;
 }
 
-console.log(computerPlay());
+function roundPlay(playerSelection , computerSelection){
+    console.log(`the player chose: ${playerSelection}`)
+    if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock"){
+        console.log("You win");
+    }else if(playerSelection.toLowerCase() == "paper" && computerSelection == "scissors"){
+        console.log("You lost, scissors beat paper");
+    }else if (playerSelection.toLowerCase()=="rock" && computerSelection=="paper"){
+        console.log("you lose! paper beats rock");
+    }else if (playerSelection.toLowerCase()=="rock" && computerSelection=="scissors"){
+        console.log("You win!")
+    }else if (playerSelection.toLowerCase()=="scissors" && computerSelection=="rock"){
+        console.log("You lose! rock beats scissors")
+    }else if (playerSelection.toLowerCase()=="scissors" && computerSelection=="paper"){
+        console.log("You win!")
+    }else{
+        console.log("It's a tie")
+    }
+}
+
+roundPlay("sciSSors" , computerPlay());
+

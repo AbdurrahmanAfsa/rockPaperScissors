@@ -34,9 +34,24 @@ function roundPlay(){
                        the result: ${playerScore} - ${computerScore}`);
             }
         }
+        return (playerScore , computerScore);
 }
+
+function checkWinner(){
+    if (playerScore > computerScore){
+        alert("Congratulations, You win");
+    }else if (playerScore < computerScore){
+        alert("The computer won, good luck next time");
+    }else{
+        alert("It's a tie");
+    }
+}
+
+
 
 for (let i = 0; i <= 4; i++) {
     roundPlay();  
 }
+
+checkWinner();
 

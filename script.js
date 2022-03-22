@@ -4,29 +4,39 @@ function computerPlay(){
     return compChoice;
 }
 
-function roundPlay(playerSelection , computerSelection){
-    if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock"){
-        console.log("You win");
-    }else if(playerSelection.toLowerCase() == "paper" && computerSelection == "scissors"){
-        console.log("You lost, scissors beat paper");
-    }else if (playerSelection.toLowerCase()=="rock" && computerSelection=="paper"){
-        console.log("you lose! paper beats rock");
-    }else if (playerSelection.toLowerCase()=="rock" && computerSelection=="scissors"){
-        console.log("You win!")
-    }else if (playerSelection.toLowerCase()=="scissors" && computerSelection=="rock"){
-        console.log("You lose! rock beats scissors")
-    }else if (playerSelection.toLowerCase()=="scissors" && computerSelection=="paper"){
-        console.log("You win!")
-    }else{
-        console.log("It's a tie")
-    }
+let computerScore = 0;
+let playerScore = 0;
+
+function roundPlay(){
+        let playerChoice = prompt("Choose rock, paper or scissors").trim().toLowerCase();
+        let computerChoice = computerPlay();
+        if(playerChoice === "rock" || "paper" || "scissors"){
+            if(playerChoice === computerChoice){
+                playerScore = playerScore;
+                computerScore = computerScore;
+                alert(`It's a tie!! the computer chose: ${computerChoice}
+                       the result: ${playerScore} - ${computerScore}`);
+            }else if(playerChoice === "rock" && computerChoice ==="scissors"){
+                playerScore += 1
+                alert(`You win!! the computer chose: ${computerChoice}
+                       the result: ${playerScore} - ${computerScore}`);
+            }else if(playerChoice === "paper" && computerChoice ==="rock"){
+                playerScore += 1
+                alert(`You win!! the computer chose: ${computerChoice}
+                       the result: ${playerScore} - ${computerScore}`);
+            }else if(playerChoice === "scissors" && computerChoice ==="paper"){
+                playerScore += 1
+                alert(`You win!! the computer chose: ${computerChoice}
+                       the result: ${playerScore} - ${computerScore}`);
+            }else {
+                computerScore += 1
+                alert(`You lose :( the computer chose: ${computerChoice}
+                       the result: ${playerScore} - ${computerScore}`);
+            }
+        }
 }
 
-function game(){
-    for (let i = 1; i <= 5 ; i++){
-        roundPlay("paper" , computerPlay());
-    }
+for (let i = 0; i <= 4; i++) {
+    roundPlay();  
 }
-
-game();
 

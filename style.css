@@ -49,14 +49,14 @@ body{
     border-color: blueviolet;
 }
 
-.result{
+.resultContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center; 
 }
 
-.result div{
+.resultContainer div{
     display: flex;
     justify-content: flex-start;
     align-items: center;
